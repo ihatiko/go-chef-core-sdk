@@ -21,7 +21,7 @@ func (s *errorStore) Load(e iface.IPkg) {
 	s.mt.Lock()
 	defer s.mt.Unlock()
 	if !e.HasError() {
-		slog.Info("successfully package connect", slog.String("component", e.Name()))
+		slog.Info("package load", slog.String("component", e.Name()))
 	}
 	s.packages = append(s.packages, e)
 }
